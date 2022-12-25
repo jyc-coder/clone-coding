@@ -15,14 +15,14 @@ html {
   display: block;
 }
 
-#header {
+.header {
   background: none;
   margin: 0;
   border: none;
   padding: 0;
 }
 
-#header .header--menu {
+.header--menu {
   height: 54px;
   background-color: #0b2239;
   padding: 0 20px;
@@ -47,7 +47,7 @@ a {
   margin-top: 12px;
 }
 
-#nav {
+.nav {
   padding: 0 20px;
   width: 100%;
   display: flex;
@@ -82,17 +82,17 @@ a {
   height: 11px;
 }
 
-#header .header--menu__login {
+.header--menu__login {
   min-width: 50px;
   color: #cfd9e0;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-#header .header--menu__login a {
+.header--menu__login a {
   margin-right: 20px;
 }
-#header .header--menu__login ul {
+.header--menu__login ul {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -105,5 +105,106 @@ a {
   height: 34px;
   font-size: 14px;
   line-height: 34px;
+  font-weight: 600;
+}
+
+.hero {
+  color: #374957;
+  text-align: center;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.stickers {
+  max-width: 1024px;
+  padding: 80px 100px 40px;
+}
+
+.stickers--font {
+  font-weight: 700;
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+
+.stickers--font__desc {
+  font-size: 18px;
+  padding: 0 30px;
+  color: #374957;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.search-holder {
+  max-width: 824px;
+  height: 64px;
+  background-color: #eff3f6;
+}
+
+.search-holder__input {
+  max-width: 824px;
+  display: flex;
+}
+
+.type-selector {
+  width: 824px;
+  height: 64px;
+  display: flex;
+}
+
+.type-selector__search-type-btn {
+  padding: 0 20px;
+  border: none;
+  outline: none;
+  position: relative;
+}
+
+.type-selector__search-type-btn:after {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 1px;
+  height: 60%;
+  transform: translateY(-50%);
+  background-color: #cfd9e0;
+  content: "";
+}
+
+.type-selector__search-btn i {
+  margin-left: 5px;
+}
+
+.type-selector__search-input {
+  width: 580px;
+  padding: 0 10px;
+  border: none;
+  background-color: #eff3f6;
+  line-height: 64px;
+  font-size: 16px;
+  flex-grow: 1;
+}
+
+.type-selector__search-btn {
+  width: 64px;
+  background-color: #4ad295;
+  cursor: pointer;
+  border: none;
+}
+.type-selector__search-btn i {
+  color: #eee;
+  margin: 0 24px;
+}
+
+.stickers--home-tags {
+  margin: 20px 0 10px 0;
+  font-size: 14px;
+}
+.stickers--home-tags span {
+  color: #374957;
+}
+
+.stickers--home-tags__content {
   font-weight: 600;
 }/*# sourceMappingURL=main.css.map */

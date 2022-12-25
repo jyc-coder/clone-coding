@@ -13,8 +13,8 @@
   </head>
   <body class="home">
     <!-- HEADER -->
-    <header id="header" class="header body-header">
-      <section class="header--menu" id="header--menu">
+    <header class="header">
+      <section class="header--menu">
         <div class="row">
           <a
             href="https://www.flaticon.com"
@@ -28,7 +28,7 @@
             />
           </a>
 
-          <nav id="nav">
+          <nav class="nav">
             <div class="main-menu">
               <ul>
                 <li>
@@ -75,5 +75,42 @@
         </div>
       </section>
     </header>
+    <section class="hero">
+      <div class="stickers">
+        <h1 class="stickers--font">Access 8.8M+ vector icons & stickers</h1>
+        <p class="stickers--font__desc">
+          Download Free Icons and Stickers for your projects. Images made by and
+          for designers in PNG, SVG, EPS, PSD and CSS formats.
+        </p>
+      </div>
+      <section class="search-holder">
+        <form
+          action="https://www.flaticon.com/search"
+          method="get"
+          class="search-holder__input"
+        >
+          <div class="type-selector">
+            <button class="type-selector__search-type-btn">
+              <span>Icons</span>
+              <i class="fa-solid fa-caret-down"></i>
+            </button>
+            <input
+              type="search"
+              class="type-selector__search-input"
+              placeholder="Search for icons"
+            />
+            <button class="type-selector__search-btn">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </div>
+        </form>
+      </section>
+      <div class="stickers--home-tags">
+        <span>Top searchs:</span>
+        <span class="stickers--home-tags__content"
+          >Technology, Education, User, People, Food, Security</span
+        >
+      </div>
+    </section>
   </body>
 </html>

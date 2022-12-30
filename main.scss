@@ -536,3 +536,101 @@ a {
   height: 1px;
   background: #eff3f6;
 }
+
+.whatsnew {
+  padding: 50px 20px 40px 0;
+  background: #f8fafb;
+  border-radius: 10px;
+
+  &__box {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: start;
+  }
+
+  &__text {
+    width: 33.33333%;
+    padding: 0 20px 0 60px;
+    text-align: left;
+    h5 {
+      font-size: 30px;
+      padding-right: 20px;
+    }
+    p {
+      padding-right: 20px;
+      color: #4a6375;
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    &__button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      background: #2bc48a;
+      border-radius: 3px;
+      min-width: 44px;
+      height: 44px;
+      font-size: 16px;
+      padding: 0 30px;
+      color: #fff;
+    }
+  }
+
+  &__cards {
+    width: 66.66667%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+
+    &__box {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: start;
+    }
+
+    &__img-d {
+      background-image: url(https://media.flaticon.com/dist/assets/e1f4e8671e83baec22bb86e7bc5d0055.png);
+      height: 100%;
+      border-radius: 6px;
+      background-size: 320px;
+      background-position: 50%;
+
+      &--uicon {
+        background-image: url(https://media.flaticon.com/dist/assets/eab458ca10b49876c230bb9c0b345ae8.jpg);
+        height: 100%;
+        border-radius: 6px;
+        background-size: 320px;
+        background-position: 50%;
+      }
+
+      &--figma {
+        background-image: url(https://media.flaticon.com/dist/assets/2342114085d92b67dbf71081b378fb4e.jpg);
+        height: 100%;
+        border-radius: 6px;
+        background-size: 320px;
+        background-position: 50%;
+      }
+    }
+
+    &__link {
+      display: flex;
+      flex-direction: column;
+      background: #fff;
+      height: 235px;
+      width: 255px;
+      padding: 10px;
+      border-radius: 8px;
+      color: #374957;
+    }
+
+    p {
+      margin: 10px 0;
+      padding-left: 10px;
+      font-size: 18px;
+      font-weight: 700;
+    }
+  }
+}

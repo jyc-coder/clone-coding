@@ -254,6 +254,12 @@ a {
   padding: 0 60px;
   margin: 0 auto;
 
+  &--mb {
+    max-width: 1640px;
+    padding: 0 60px;
+    margin: 0 auto 60px auto;
+  }
+
   &__cards {
     width: fit-content;
     margin: 40px auto 50px;
@@ -631,6 +637,68 @@ a {
       padding-left: 10px;
       font-size: 18px;
       font-weight: 700;
+    }
+  }
+}
+
+.contributor {
+  background-color: #0e2a47;
+  padding: 0 50px 0 60px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 50px;
+
+  &__box {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+
+  &__text {
+    width: 50%;
+    padding: 50px 10px 50px 0;
+
+    h5 {
+      color: #fff;
+      font-size: 30px;
+      padding-right: 20px;
+    }
+    p {
+      padding-right: 20px;
+      color: #fff;
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    &__button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      background: #2bc48a;
+      border-radius: 3px;
+      min-width: 44px;
+      height: 44px;
+      font-size: 16px;
+      padding: 0 30px;
+      color: #fff;
+
+      &:hover {
+        background: #00af80;
+      }
+    }
+  }
+
+  &__card {
+    width: 50%;
+    padding: 0 5px;
+    box-sizing: border-box;
+    img {
+      width: 589px;
+      height: auto;
+      max-width: none;
+      margin-left: auto;
+      transform: translate(100px, 47px);
     }
   }
 }

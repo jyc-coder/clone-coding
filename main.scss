@@ -250,7 +250,7 @@ a {
 }
 
 .container {
-  max-width: 1520px;
+  max-width: 1640px;
   padding: 0 60px;
   margin: 0 auto;
 
@@ -426,18 +426,113 @@ a {
       &__image {
         width: 66%;
         padding: 0 5px;
-        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
         img {
-          display: inline;
           height: auto;
-          position: absolute;
-          left: 100px;
           max-width: none;
           width: 730px;
-          top: 40px;
+          margin-top: 30px;
         }
       }
     }
   }
+}
+
+.slider {
+  padding-bottom: 50px;
+
+  &__title {
+    padding-bottom: 30px;
+    text-align: center;
+    outline: none;
+
+    h3 {
+      margin-top: 0;
+      margin-bottom: 5px;
+      font-size: 30px;
+      color: #0b2239;
+    }
+
+    p {
+      font-size: 18px;
+      color: #4a6375;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__box {
+    display: flex;
+    justify-content: space-between;
+    &__items {
+      width: 100%;
+      max-width: 410px;
+      &__item {
+        cursor: pointer;
+        position: relative;
+
+        i {
+          position: absolute;
+          width: 16px;
+          top: 9px;
+        }
+
+        &__title {
+          &--active {
+            color: #2bc48a;
+            font-size: 22px;
+            font-weight: 700;
+            margin: 20px 30px 10px;
+          }
+
+          color: #4a6375;
+          font-size: 22px;
+          font-weight: 700;
+          margin: 20px 30px 10px;
+        }
+
+        &__text {
+          color: #4a6375;
+          margin: 0 30px 20px;
+          font-size: 16px;
+          word-spacing: -2px;
+          a {
+            font-weight: 600;
+            color: #008b71;
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+
+    &__images {
+      display: flex;
+      justify-content: end;
+      width: 100%;
+      max-height: 590px;
+      margin-left: 30px;
+
+      picture {
+        width: 100%;
+        height: 590px;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+          transform: translateY(-30px);
+        }
+      }
+    }
+  }
+}
+
+.item-progress {
+  width: 100%;
+  height: 1px;
+  background: #eff3f6;
 }

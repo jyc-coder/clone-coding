@@ -1,0 +1,225 @@
+body,
+html {
+  height: 100%;
+  display: block;
+}
+
+body {
+  color: #3f7d95;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+  outline: none;
+}
+
+a {
+  cursor: pointer;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+#viewport {
+  width: 100%;
+  background-color: #fff;
+  min-height: 100%;
+  position: relative;
+}
+// display block 설정 mixin
+@mixin block {
+  display: block;
+}
+
+// 정렬 목적으로 mixin 생성
+@mixin row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+// heigth를 최대로 지정하는 mixin
+
+@mixin full-height {
+  height: 100% !important;
+}
+
+// 마진을 0으로 변경하는 mixin
+
+@mixin mg-none {
+  margin: 0;
+}
+// 아이템 중앙정렬 mixin
+
+@mixin vertical-center {
+  align-items: center;
+}
+
+// 아이콘 크기 mixin
+
+@mixin sm-icon {
+  width: 14px;
+  height: 14px;
+  font-size: 14px;
+  line-height: 14px;
+}
+
+// 버튼 mixin 배경, 텍스트 padding 값을 입력하여 수정가능
+@mixin button($bg: #2bc48a, $pd: 30px) {
+  font-size: 16px;
+  border: none;
+  text-align: center;
+  border-radius: 3px;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 0 $pd;
+  min-width: 44px;
+  height: 44px;
+  font-size: 16px;
+  transition: 0.25s linear;
+  background: $bg;
+  color: #fff;
+}
+// 작은 버튼 mixin
+@mixin btn-sm {
+  min-width: 34px;
+  height: 34px;
+  font-size: 14px;
+}
+
+// 배경색
+
+$hd-bg: #0b2239;
+
+// 헤더 섹션
+#header {
+  background: none;
+  margin: 0;
+  border: none;
+  padding: 0;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 14;
+  width: 100%;
+  &__menu {
+    height: 54px;
+    background-color: $hd-bg;
+    padding: 0 20px;
+
+    &__row {
+      @include row;
+      @include full-height;
+      @include vertical-center;
+      @include mg-none;
+
+      // 로고 크기 설정
+      img {
+        width: 154px;
+        height: 30px;
+      }
+    }
+    // nav 설정
+    &__nav {
+      flex: 1;
+      font-size: 20px;
+      padding: 0 20px;
+      font-size: 14px;
+
+      &__main-menu {
+        overflow: visible;
+        height: 100%;
+
+        a {
+          font-weight: 600;
+          color: #cfd9e0;
+          margin: 10px;
+        }
+        ul {
+          @include mg-none;
+          @include vertical-center;
+          @include row;
+          padding: 0;
+          align-items: center;
+        }
+        // more 버튼
+        &__popover-container {
+          display: inline-block;
+          margin-right: 10px;
+
+          &__btn {
+            cursor: pointer;
+            font-weight: 600;
+            color: #cfd9e0;
+            margin: 10px;
+          }
+
+          i {
+            @include sm-icon;
+          }
+        }
+
+        .push-right {
+          margin-left: auto;
+        }
+        &__lang-sel {
+          margin-right: 10px;
+          display: inline-block;
+          .popover-button {
+            @include button($bg: transparent, $pd: 20px);
+            @include btn-sm;
+            display: inline-flex !important;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+
+            &:hover {
+              background-color: #113255;
+            }
+            img {
+              width: 16px;
+              height: 16px;
+              border: 0;
+              max-width: 100%;
+            }
+          }
+        }
+        .pricing {
+          font-weight: 600;
+          color: #cfd9e0;
+        }
+      }
+    }
+
+    &__login {
+      @include row;
+      height: 36px;
+      min-width: 60px;
+      margin: 0;
+
+      a:nth-child(1) {
+        margin-right: 20px;
+        font-weight: 600;
+        color: #fff;
+        font-size: 14px;
+      }
+
+      a:last-child {
+        @include button($bg: transparent, $pd: 20px);
+        @include btn-sm;
+        box-shadow: inset 0 0 0 2px #fff;
+        display: inline-flex !important;
+        align-items: center;
+        justify-content: center;
+        font-weight: 600;
+      }
+    }
+  }
+}

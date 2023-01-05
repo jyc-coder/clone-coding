@@ -110,6 +110,13 @@ h6 {
   margin: 0 auto;
 }
 
+// row-cards 헤더 title
+@mixin rc-header-title {
+  font-size: 26px;
+  font-weight: 600;
+  color: #0b2239;
+}
+
 // 배경색
 
 $hd-bg: #0b2239;
@@ -381,6 +388,8 @@ $hd-bg: #0b2239;
   @include container;
 }
 
+// circle-cards 섹션
+
 .circle-cards {
   width: fit-content;
   margin: 40px auto 50px;
@@ -440,6 +449,99 @@ $hd-bg: #0b2239;
         font-size: 14px;
         font-weight: 400;
         margin-bottom: 20px;
+      }
+    }
+  }
+}
+
+// row-cards 섹션
+
+.row-cards {
+  margin-bottom: 50px;
+
+  &__list {
+    margin-bottom: 40px;
+
+    &__header {
+      @include pd-none;
+      @include mg-none;
+      @include row;
+
+      &__box {
+        flex: 1;
+        .title {
+          @include rc-header-title;
+          display: inline-block;
+          margin-bottom: 10px;
+        }
+      }
+
+      .link-arrow {
+        color: #008b71;
+      }
+    }
+
+    &__content {
+      @include row;
+
+      width: calc(100% + 20px);
+      margin-left: -10px;
+
+      // article 태그
+      &__box {
+        min-width: 320px;
+        padding: 10px;
+        flex: 1;
+
+        // a 태그
+        .row-cards-link {
+          border-radius: 8px;
+          display: block;
+          border: 1px solid #cfd9e0;
+          overflow: hidden;
+          background-color: #fff;
+        }
+
+        .img-holder {
+          overflow: hidden;
+
+          img {
+            margin: 5px auto;
+            max-width: 100%;
+            width: 300px;
+            height: 188px;
+            display: block;
+          }
+        }
+
+        .row-cards-name {
+          height: unset;
+          padding: 5px 20px;
+          color: #1d262d;
+          line-height: 44px;
+          background-color: #fff;
+          font-size: 14px;
+          font-weight: 600;
+          &__box {
+            @include row;
+
+            &__name {
+              padding-right: 5px;
+              flex: 1;
+              span {
+                text-transform: capitalize;
+              }
+            }
+
+            &__icons {
+              span {
+                font-size: 13px;
+                color: #5f7d95;
+                text-transform: uppercase;
+              }
+            }
+          }
+        }
       }
     }
   }

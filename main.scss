@@ -3,16 +3,15 @@ html {
   height: 100%;
   display: block;
 }
+* {
+  box-sizing: border-box;
+  outline: none;
+}
 
 body {
   color: #3f7d95;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
-}
-
-* {
-  box-sizing: border-box;
-  outline: none;
 }
 
 a {
@@ -24,13 +23,19 @@ a {
 li {
   list-style: none;
 }
-
-#viewport {
-  width: 100%;
-  background-color: #fff;
-  min-height: 100%;
-  position: relative;
+// 폰트 기본값 설정
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 20px 0;
+  padding: 0;
+  color: #374957;
+  line-height: 1.4;
 }
+
 // display block 설정 mixin
 @mixin block {
   display: block;
@@ -53,6 +58,13 @@ li {
 @mixin mg-none {
   margin: 0;
 }
+
+// 패딩을 0으로 변경하는 mixin
+
+@mixin pd-none {
+  padding: 0;
+}
+
 // 아이템 중앙정렬 mixin
 
 @mixin vertical-center {
@@ -91,9 +103,23 @@ li {
   font-size: 14px;
 }
 
+// container mixin
+@mixin container {
+  max-width: 1520px;
+  padding: 0 60px;
+  margin: 0 auto;
+}
+
 // 배경색
 
 $hd-bg: #0b2239;
+
+#viewport {
+  width: 100%;
+  background-color: #fff;
+  min-height: 100%;
+  position: relative;
+}
 
 // 헤더 섹션
 #header {
@@ -219,6 +245,201 @@ $hd-bg: #0b2239;
         align-items: center;
         justify-content: center;
         font-weight: 600;
+      }
+    }
+  }
+}
+
+// hero 섹션
+
+.hero {
+  text-align: center;
+  color: #374957;
+  &__content {
+    max-width: 1024px;
+    margin: auto;
+    padding: 80px 100px 40px;
+
+    &__title {
+      font-weight: 700;
+      margin-bottom: 10px;
+      line-height: 1.2;
+      font-size: 42px;
+      color: #0b2239;
+    }
+
+    &__subtitle {
+      font-size: 18px;
+      padding: 0 30px;
+      color: #374957;
+      font-weight: 400;
+      line-height: 1.4;
+      word-spacing: -2px;
+      margin-bottom: 30px;
+    }
+
+    &__search-holder {
+      @include pd-none;
+      @include mg-none;
+      box-sizing: border-box;
+      &__input {
+        background-color: #eff3f6;
+        height: 64px;
+        line-height: 64px;
+        border-radius: 3px;
+        @include mg-none;
+        @include row;
+
+        .type-selector {
+          display: inline-block;
+
+          &__box {
+            display: inline-block;
+          }
+
+          &__btn {
+            @include button($bg: none, $pd: 20px);
+            @include row;
+            position: relative;
+            align-items: center;
+            text-align: center;
+            height: 64px;
+            height: 100%;
+            line-height: 64px;
+            color: #374957;
+
+            &::after {
+              position: absolute;
+              top: 50%;
+              right: 0;
+              width: 1px;
+              height: 60%;
+              transform: translatey(-50%);
+              background-color: #cfd9e0;
+              content: '';
+            }
+
+            span {
+              min-width: 60px;
+              font-weight: 400;
+              color: #374957;
+              font-size: 16px;
+            }
+
+            i {
+              color: #5f7d95;
+              fill: #5f7d95;
+              transform: scale(0.7);
+            }
+          }
+        }
+
+        .search-input {
+          // 최대로 늘리기
+          flex-grow: 1;
+          &__text {
+            // input 길이는 따로 정했으니 여기도 지정해야함
+            width: 100%;
+            padding: 0 10px;
+            height: 64px;
+            line-height: 64px;
+            border: none;
+            background: none;
+            white-space: nowrap;
+            text-align: left;
+          }
+        }
+
+        .search-btn {
+          @include button($pd: 0);
+          width: 64px;
+          height: 64px;
+          line-height: 64px;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          font-weight: 600;
+
+          i {
+            fill: #fff;
+          }
+        }
+      }
+    }
+    // 검색창 아래 작은 태그
+    &__home-tags {
+      margin: 20px auto 10px auto;
+      font-size: 14px;
+      a {
+        color: #374957;
+      }
+    }
+  }
+}
+
+.container {
+  @include container;
+}
+
+.circle-cards {
+  width: fit-content;
+  margin: 40px auto 50px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(80px, 200px));
+  gap: 30px;
+  text-align: center;
+  a {
+    color: #0b2239;
+    cursor: pointer;
+    font-weight: 600px;
+    text-decoration: none;
+  }
+
+  .circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(218.58deg, #2bc48a 11.5%, #a2f7c5 87.95%);
+    border-radius: 50%;
+    margin: 0 auto;
+  }
+
+  .image {
+    width: 114px;
+    height: 114px;
+    border: 4px solid #fff;
+    border-radius: 50%;
+    margin: 0 auto;
+    z-index: 5;
+    overflow: hidden;
+    background: linear-gradient(110.49deg, #eff3f6 26.28%, #d7d7ff 94.17%);
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: all 0.2s ease-in-out;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  &__item {
+    &__text {
+      color: #374957;
+
+      h6 {
+        margin-bottom: 5px;
+      }
+
+      p {
+        font-size: 14px;
+        font-weight: 400;
+        margin-bottom: 20px;
       }
     }
   }

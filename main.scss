@@ -546,3 +546,67 @@ $hd-bg: #0b2239;
     }
   }
 }
+
+// banner 섹션
+
+.banner {
+  margin-bottom: 50px;
+  background-color: #f8fafb;
+  padding: 0 50px 0 60px;
+  border-radius: 10px;
+  overflow: hidden;
+  // 정렬
+  &__box {
+    @include row;
+  }
+  // 텍스트 항목
+  &__text {
+    @include mg-none;
+    width: calc(100% / 3);
+    padding: 50px 10px 50px 0;
+    // 배너 제목
+    &__title {
+      @include mg-none;
+      font-size: 30px;
+      color: #0b2239;
+      margin-bottom: 10px;
+      font-weight: 600;
+      word-spacing: -4px;
+    }
+    // 설명
+    &__sub {
+      margin-bottom: 30px;
+      font-size: 18px;
+      color: #374957;
+      // 진한 글씨
+      strong {
+        font-weight: 700;
+      }
+    }
+    // 버튼 속성
+    &__btn {
+      @include button($bg: #2bc48a, $pd: 30px);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+    }
+  }
+  // 배너 이미지
+  &__image {
+    @include mg-none;
+    width: calc(100% / 1.5);
+    padding: 0 5px;
+    box-sizing: border-box;
+
+    img {
+      display: block;
+      height: auto;
+      max-width: none;
+      margin-left: auto;
+      border: 0;
+      width: 730px;
+      transform: translateY(30px);
+    }
+  }
+}
